@@ -10,7 +10,7 @@ namespace CxCE_Demo
 
         }
 
-        protected void submit_Click(object sender, EventArgs e)
+        protected void submit_Click(string sender, EventArgs e)
         {
             string processtostart = systemname.Text;
             Process.Start(processtostart);

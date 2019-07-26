@@ -15,8 +15,8 @@ namespace CxCE_Demo
             /*
             Adding Comments
             */
-            string processtostart = systemname.Text;
-            Process.Start(processtostart);
+            string processtostartnow = systemname.Text;
+            Process.Start(processtostartnow);
         }
     }
 }

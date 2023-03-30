@@ -35,6 +35,7 @@ jobs:
         sca_tenant: SCA-Champions  # <-- Insert Checkmarx CxSCA Tenant
         sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }} # To be stored in GitHub Secrets.
         sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
+        sca_enable_sca_resolver: true
         break_build: false
         scanners: sca
         bug_tracker: Sarif

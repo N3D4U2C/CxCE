@@ -25,7 +25,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Checkmarx CxFlow Action
-      uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
+      #uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
+      uses: n3d4u2c/cxghasbt@v1.0
       with:
         project: SBTTest  # <-- Insert Checkmarx CxSCA Project Name
         sca_api_url: https://api.scacheckmarx.com

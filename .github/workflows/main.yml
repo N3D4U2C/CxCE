@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Checkmarx CxFlow Action
       #uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
-      #uses: n3d4u2c/checkmarx-cxflow-github-action-sbt@v1.0
+      uses: n3d4u2c/checkmarx-cxflow-github-action-sbt@v1.0
       with:
         project: SBTTest  # <-- Insert Checkmarx CxSCA Project Name
         sca_api_url: https://api.scacheckmarx.com
@@ -41,8 +41,3 @@ jobs:
         scanners: sca
         bug_tracker: Sarif
         params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory
-
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: cx.sarif

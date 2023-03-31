@@ -36,5 +36,5 @@ jobs:
         sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
         break_build: false
         scanners: sca
-        bug_tracker: Sarif
+        bug_tracker: None
         params: --sca.enable-sca-resolver=true --sca.include-sources=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory

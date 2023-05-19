@@ -35,9 +35,10 @@ jobs:
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C  # To be stored in GitHub Secrets.
         incremental: false
-        break_build: false
+        break_build: true
+        error_merge: true
         scanners: sast
-        bug_tracker: none
+        bug_tracker: wait
         sca_api_url: https://api.scacheckmarx.com
         sca_app_url: https://sca.scacheckmarx.com
         sca_access_control_url: https://platform.checkmarx.net

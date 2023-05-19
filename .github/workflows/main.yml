@@ -25,17 +25,23 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Checkmarx CxFlow Action
-      ##uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
-      uses: n3d4u2c/checkmarx-cxflow-github-action@master
+      uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
+      #uses: N3D4U2C/checkmarx-cxflow-github-action-sbt@v1.0
       with:
-        project: SBTTest  # <-- Insert Checkmarx CxSCA Project Name
+        project: CxCE_Test  # <-- Insert Checkmarx CxSCA Project Name
+        team: 'CxServer/Liverpool/Mi Credito 2.0 - Liverpool'
+        checkmarx_url: https://checkmarxsast.ngrok.io  # To be stored in GitHub Secrets.
+        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
+        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
+        checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C  # To be stored in GitHub Secrets.
+        incremental: false
+        break_build: false
+        scanners: sast
+        bug_tracker: none
         sca_api_url: https://api.scacheckmarx.com
         sca_app_url: https://sca.scacheckmarx.com
         sca_access_control_url: https://platform.checkmarx.net
         sca_tenant: SCA-Champions  # <-- Insert Checkmarx CxSCA Tenant
         sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }} # To be stored in GitHub Secrets.
         sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
-        break_build: false
-        scanners: sca
-        bug_tracker: None
-        params: --sca.enable-sca-resolver=true --sca.include-sources=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory
+        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory

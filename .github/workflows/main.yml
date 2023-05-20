@@ -29,7 +29,7 @@ jobs:
       #uses: N3D4U2C/checkmarx-cxflow-github-action-sbt@v1.0
       with:
         project: CxCE_Test  # <-- Insert Checkmarx CxSCA Project Name
-        team: '	CxServer/Checkmarx/Users'
+        team: 'CxServer/Checkmarx/Users'
         checkmarx_url: https://checkmarxsast.ngrok.io  # To be stored in GitHub Secrets.
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}

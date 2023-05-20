@@ -14,9 +14,9 @@
 name: Checkmarx SAST/SCA Scan
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ $default-branch, $protected-branches ]
+  pull_request:
+    branches: [ $default-branch, $protected-branches ]
     
 jobs:
   build:

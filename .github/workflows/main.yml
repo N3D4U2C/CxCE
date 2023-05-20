@@ -14,9 +14,9 @@
 name: Checkmarx SAST/SCA Scan
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ $default-branch, $protected-branches ]
+  pull_request:
+    branches: [ $default-branch, $protected-branches ]
     
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C  # To be stored in GitHub Secrets.
         incremental: false
-        break_build: false
+        break_build: true
         error_merge: false
         scanners: sast
         bug_tracker: wait

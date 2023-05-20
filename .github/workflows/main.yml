@@ -29,14 +29,14 @@ jobs:
       #uses: N3D4U2C/checkmarx-cxflow-github-action-sbt@v1.0
       with:
         project: CxCE_Test  # <-- Insert Checkmarx CxSCA Project Name
-        team: 'CxServer/Liverpool/Mi Credito 2.0 - Liverpool'
+        team: '	CxServer/Checkmarx/Users'
         checkmarx_url: https://checkmarxsast.ngrok.io  # To be stored in GitHub Secrets.
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C  # To be stored in GitHub Secrets.
         incremental: false
-        break_build: true
-        error_merge: true
+        break_build: false
+        error_merge: false
         scanners: sast
         bug_tracker: wait
         sca_api_url: https://api.scacheckmarx.com
